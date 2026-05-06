@@ -1,12 +1,11 @@
-print("prueba branch devia")
-
-
+import sys
 try:
     import matplotlib.pyplot as plt
 except ImportError:
     plt = None
 
 # Parámetros del modelo
+
 entrada = 5        # L/min
 k = 0.2            # coeficiente de salida
 dt = 0.1           # paso de tiempo (min)
@@ -23,11 +22,10 @@ t = 0
 while t <= tiempo_total:
     tiempos.append(t)
     volumenes.append(V)
-    
+
     # Ecuación diferencial (Euler)
     dVdt = entrada - k * V
     V = V + dVdt * dt
-    
     t += dt
 
 # Gráfica
